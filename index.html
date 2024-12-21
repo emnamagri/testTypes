@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,124 +20,233 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <!-- Popmotion -->
-    <script src="https://unpkg.com/browse/popmotion@11.0.5/dist/popmotion.min.js"></script>
-
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Prism.js -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
-</head>
-<body class="bg-light">
-
-<!-- Header -->
-<header class="bg-primary text-white text-center p-4">
-    <h1 class="text-3xl font-bold">Bienvenue dans le monde des tests logiciels</h1>
-    <p class="mt-2">Découvrez les bases des types de tests de manière simple et interactive.</p>
-</header>
-
-<!-- Navigation -->
-<nav class="bg-light p-3">
-    <a href="index.html" class="btn btn-primary">Accueil</a>
-    <a href="content/tests-statiques.html" class="btn btn-secondary">Tests Statiques</a>
-    <a href="content/tests-dynamiques.html" class="btn btn-secondary">Tests Dynamiques</a>
-    <a href="content/tests-fonctionnels.html" class="btn btn-secondary">Tests Fonctionnels</a>
-    <a href="content/tests-non-fonctionnels.html" class="btn btn-secondary">Tests Non Fonctionnels</a>
-    <a href="content/tests-boite-noire.html" class="btn btn-secondary">Tests Boîte Noire</a>
-    <a href="content/tests-boite-blanche.html" class="btn btn-secondary">Tests Boîte Blanche</a>
-    <a href="content/devops.html" class="btn btn-secondary">DevOps</a>
-    <a href="content/ci-cd.html" class="btn btn-secondary">CI/CD</a>
-    <a href="content/tests-specifiques.html" class="btn btn-secondary">Tests Spécifiques</a>
-</nav>
-
-<!-- Main Content -->
-<main class="container my-5">
-    <!-- Introduction Section -->
-    <section id="introduction" data-aos="fade-up">
-        <h2 class="text-xl font-bold mb-3">Pourquoi les tests sont-ils importants ?</h2>
-        <p>Les tests logiciels permettent de s'assurer que les applications fonctionnent correctement et répondent aux attentes des utilisateurs.</p>
-        <div id="bug-animation" class="my-4 text-center">
-            <p class="mb-3">Animation : Imaginez un bouton qui ne fonctionne pas, puis voyez comment les tests corrigent cela !</p>
-            <button id="test-button" class="btn btn-danger">Je ne fonctionne pas encore</button>
-        </div>
-    </section>
-
-    <!-- Exercise Section -->
-    <section id="exercise" data-aos="fade-up">
-        <h2 class="text-xl font-bold mb-3">Exercice : Trouvez l’erreur dans le texte !</h2>
-        <p>Repérez l'erreur dans le texte ci-dessous et sélectionnez votre réponse :</p>
-        <div class="border p-3 bg-white shadow">
-            <p id="text-to-check" class="text-danger">"Exampel de texte avec une erreur."</p>
-
-            <!-- Choix des erreurs -->
-            <div class="my-3">
-                <label>
-                    <input type="radio" name="error" value="Exampel"> "Exampel" est incorrect.
-                </label><br>
-                <label>
-                    <input type="radio" name="error" value="de"> "de" est incorrect.
-                </label><br>
-                <label>
-                    <input type="radio" name="error" value="aucune"> Il n’y a pas d’erreur.
-                </label>
-            </div>
-
-            <button id="validate-button" class="btn btn-primary mt-3">Valider</button>
-        </div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="text-center bg-light py-3">
-    <p>&copy; Belhaj Ouajdi, 2024</p>
-</footer>
-
-<!-- Custom JS -->
-<script src="js/scripts.js"></script>
-<script>
-    // Initialisation AOS
-    AOS.init();
-
-    // GSAP Animation for the Bug Button
-    const testButton = document.getElementById('test-button');
-    testButton.addEventListener('click', () => {
-        gsap.to(testButton, {
-            duration: 1,
-            backgroundColor: 'green',
-            color: 'white',
-            innerHTML: "Je fonctionne maintenant !",
-        });
-    });
-
-    // SweetAlert2 for the Exercise Button
-    const validateButton = document.getElementById('validate-button');
-    validateButton.addEventListener('click', () => {
-        const selectedOption = document.querySelector('input[name="error"]:checked');
-        if (selectedOption && selectedOption.value === 'Exampel') {
-            Swal.fire({
-                title: 'Bravo !',
-                text: 'Vous avez identifié le problème !',
-                icon: 'success',
-                confirmButtonText: 'Continuer',
-            });
-        } else {
-            Swal.fire({
-                title: 'Oups !',
-                text: 'Ce n’est pas la bonne réponse.',
-                icon: 'error',
-                confirmButtonText: 'Réessayer',
-            });
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
-    });
-</script>
+
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.25rem;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .exercise {
+            border: 1px solid #ddd;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .exercise label {
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .exercise input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-custom {
+            background-color: #0d6efd;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0a58ca;
+        }
+
+        #bug-animation {
+            margin-top: 2rem;
+        }
+
+        #test-button {
+            font-weight: bold;
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        #test-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="text-center">
+        <h1>Bienvenue dans le monde des tests logiciels</h1>
+        <p>Découvrez les bases des types de tests de manière simple et interactive.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="container">
+        <a href="index.html" class="btn btn-custom">Accueil</a>
+        <a href="content/tests-statiques.html" class="btn btn-custom">Tests Statiques</a>
+        <a href="content/tests-dynamiques.html" class="btn btn-custom">Tests Dynamiques</a>
+        <a href="content/tests-fonctionnels.html" class="btn btn-custom">Tests Fonctionnels</a>
+        <a href="content/tests-non-fonctionnels.html" class="btn btn-custom">Tests Non Fonctionnels</a>
+        <a href="content/tests-boite-noire.html" class="btn btn-custom">Tests Boîte Noire</a>
+        <a href="content/tests-boite-blanche.html" class="btn btn-custom">Tests Boîte Blanche</a>
+        <a href="content/devops.html" class="btn btn-custom">DevOps</a>
+        <a href="content/ci-cd.html" class="btn btn-custom">CI/CD</a>
+        <a href="content/tests-specifiques.html" class="btn btn-custom">Tests Spécifiques</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="introduction" data-aos="fade-up">
+            <h2>Pourquoi les tests sont-ils importants ?</h2>
+            <p>Les tests logiciels permettent de s'assurer que les applications fonctionnent correctement et répondent aux attentes des utilisateurs.</p>
+            <div id="bug-animation" class="my-4 text-center">
+                <p class="mb-3">Animation : Imaginez un bouton qui ne fonctionne pas, puis voyez comment les tests corrigent cela !</p>
+                <button id="test-button" class="btn btn-danger">Je ne fonctionne pas encore</button>
+            </div>
+        </section>
+
+        <!-- Exercise Section -->
+        <section id="exercise" data-aos="fade-up">
+            <h2>Exercice : Trouvez l’erreur dans le texte !</h2>
+            <p>Repérez l'erreur dans le texte ci-dessous et sélectionnez votre réponse :</p>
+            <div class="exercise">
+                <p id="text-to-check" class="text-danger">"Exampel de texte avec une erreur."</p>
+
+                <!-- Choix des erreurs -->
+                <div class="my-3">
+                    <label>
+                        <input type="radio" name="error" value="Exampel"> "Exampel" est incorrect.
+                    </label><br>
+                    <label>
+                        <input type="radio" name="error" value="de"> "de" est incorrect.
+                    </label><br>
+                    <label>
+                        <input type="radio" name="error" value="aucune"> Il n’y a pas d’erreur.
+                    </label>
+                </div>
+
+                <button id="validate-button" class="btn btn-custom mt-3">Valider</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Gomycode, 2025</p>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialisation AOS
+        AOS.init();
+
+        // GSAP Animation for the Bug Button
+        const testButton = document.getElementById('test-button');
+        testButton.addEventListener('click', () => {
+            gsap.to(testButton, {
+                duration: 1,
+                backgroundColor: 'green',
+                color: 'white',
+                innerHTML: "Je fonctionne maintenant !",
+            });
+        });
+
+        // SweetAlert2 for the Exercise Button
+        const validateButton = document.getElementById('validate-button');
+        validateButton.addEventListener('click', () => {
+            const selectedOption = document.querySelector('input[name="error"]:checked');
+            if (selectedOption && selectedOption.value === 'Exampel') {
+                Swal.fire({
+                    title: 'Bravo !',
+                    text: 'Vous avez identifié le problème !',
+                    icon: 'success',
+                    confirmButtonText: 'Continuer',
+                });
+            } else {
+                Swal.fire({
+                    title: 'Oups !',
+                    text: 'Ce n’est pas la bonne réponse.',
+                    icon: 'error',
+                    confirmButtonText: 'Réessayer',
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
