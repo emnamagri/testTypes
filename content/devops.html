@@ -19,59 +19,50 @@
 <body>
 
 <!-- Header -->
-<header class="bg-primary text-white text-center p-4">
+<header class="bg-danger text-black text-center p-4">
     <h1 class="text-3xl font-bold">DevOps</h1>
-    <p class="mt-2">Un pont entre développeurs et opérateurs pour une meilleure collaboration.</p>
+    <p class="mt-2">DevOps is a partnership between software development and IT operations that emphasizes communication, collaboration, and integration..</p>
 </header>
 
 <!-- Navigation pour les pages dans le dossier content -->
-<nav class="bg-light p-3">
-    <a href="../index.html" class="btn btn-primary">Accueil</a>
-    <a href="tests-statiques.html" class="btn btn-secondary">Tests Statiques</a>
-    <a href="tests-dynamiques.html" class="btn btn-secondary">Tests Dynamiques</a>
-    <a href="tests-fonctionnels.html" class="btn btn-secondary">Tests Fonctionnels</a>
-    <a href="tests-non-fonctionnels.html" class="btn btn-secondary">Tests Non Fonctionnels</a>
-    <a href="tests-boite-noire.html" class="btn btn-secondary">Tests Boîte Noire</a>
-    <a href="tests-boite-blanche.html" class="btn btn-secondary">Tests Boîte Blanche</a>
-    <a href="devops.html" class="btn btn-secondary">DevOps</a>
-    <a href="ci-cd.html" class="btn btn-secondary">CI/CD</a>
-    <a href="tests-specifiques.html" class="btn btn-secondary">Tests Spécifiques</a>
+<nav class="bg-danger p-3">
+    <a href="../index.html" class="btn btn-primary">Home</a>
+
 </nav>
 
 <!-- Main Content -->
 <main class="container my-5">
     <!-- Description Section -->
     <section id="description" data-aos="fade-up">
-        <h2 class="text-xl font-bold mb-3">Qu'est-ce que DevOps ?</h2>
+        <h2 class="text-xl font-bold mb-3">What is DevOps ?</h2>
         <p>
-            DevOps est une approche qui combine développement et opérations pour automatiser
-            et optimiser les processus de développement logiciel.
+            DevOps is an organizational approach aiming to create synergy by getting development (including testing) and operations to work together to achieve a set of common goals.
         </p>
         <ul>
-            <li>Rapprochement entre les équipes de développement et d'exploitation.</li>
+            <li>DevOps promotes team autonomy, fast feedback, integrated toolchains, and technical practices like continuous integration (CI) and continuous delivery (CD). </li>
             <li>Favorise l'automatisation et la collaboration.</li>
-            <li>Objectif : Livraison plus rapide et plus fiable des logiciels.</li>
+            <li>This enables the teams to build, test and release high-quality code faster through a DevOps delivery pipeline</li>
         </ul>
     </section>
 
     <!-- Exercice interactif -->
     <section id="interactive" data-aos="fade-up" class="mt-5">
         <h2 class="text-xl font-bold mb-3">Exercice interactif : Le pipeline DevOps</h2>
-        <p>Identifiez les étapes correctes d’un pipeline DevOps :</p>
+        <p>Identify the steps of DEVOPS:</p>
         <ol>
-            <li><input type="checkbox" name="step" value="code"> Code est soumis</li>
-            <li><input type="checkbox" name="step" value="review"> Revue du code</li>
-            <li><input type="checkbox" name="step" value="test"> Tests automatisés</li>
-            <li><input type="checkbox" name="step" value="deploy"> Déploiement en production</li>
-            <li><input type="checkbox" name="step" value="wrong"> Ajouter des fonctionnalités en production directement</li>
+            <li><input type="checkbox" name="step" value="code"> Code submitted</li>
+            <li><input type="checkbox" name="step" value="review"> Code review</li>
+            <li><input type="checkbox" name="step" value="test"> Test automation</li>
+            <li><input type="checkbox" name="step" value="deploy"> Deployement</li>
+            <li><input type="checkbox" name="step" value="wrong"> add new fonctionnality </li>
         </ol>
-        <button id="validate-devops" class="btn btn-primary mt-3">Valider mes choix</button>
+        <button id="validate-devops" class="btn btn-primary mt-3">Validate</button>
     </section>
 </main>
 
 <!-- Footer -->
 <footer class="text-center bg-light py-3">
-    <p>&copy; GoMyCode, 2025. Tous droits réservés.</p>
+    <p>&copy; GoMyCode, 2025. </p>
 </footer>
 
 <!-- Scripts -->
@@ -93,17 +84,17 @@
 
         if (isCorrect) {
             Swal.fire({
-                title: 'Bravo !',
-                text: 'Vous avez identifié correctement les étapes du pipeline DevOps.',
+                title: 'Excellent !',
+                text: 'This are the steps of DEVOPS',
                 icon: 'success',
-                confirmButtonText: 'Continuer',
+                confirmButtonText: 'Continue',
             });
         } else {
             Swal.fire({
                 title: 'Oups !',
-                text: 'Certaines étapes ne sont pas correctes. Essayez encore.',
+                text: 'Try again.',
                 icon: 'error',
-                confirmButtonText: 'Réessayer',
+                confirmButtonText: 'Tray again',
             });
         }
     });

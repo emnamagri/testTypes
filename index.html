@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapitre 2 : Types de Tests</title>
+    <title>TEST TYPES</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         }
 
         header {
-            background-color: #0d6efd;
+            background-color: #530c0c;
             color: white;
             padding: 3rem 0;
         }
@@ -55,7 +55,7 @@
         }
 
         nav {
-            background-color: #f8f9fa;
+            background-color: #530c0c;
             padding: 1rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -63,7 +63,7 @@
         nav a {
             margin-right: 1rem;
             font-size: 1.1rem;
-            color: #0d6efd;
+            color: #530c0c;
             text-decoration: none;
         }
 
@@ -82,7 +82,7 @@
         h2 {
             font-size: 1.75rem;
             font-weight: bold;
-            color: #0d6efd;
+            color: #530c0c;
         }
 
         p {
@@ -115,7 +115,7 @@
         }
 
         .btn-custom {
-            background-color: #0d6efd;
+            background-color: #530c0c;
             color: white;
             font-weight: bold;
             border-radius: 5px;
@@ -123,7 +123,7 @@
         }
 
         .btn-custom:hover {
-            background-color: #0a58ca;
+            background-color: #530c0c;
         }
 
         #bug-animation {
@@ -149,58 +149,67 @@
 <body>
 
     <!-- Header -->
+<header class="header text-center text-light">
+    <a href="index.html">
+        <img src="./image-removebg-preview (2).png" alt="Logo" class="logo" style="height: 300px;">
+    </a>
+    <div class="overlay"></div>
+    <div class="content">
+           </div>
+</header>
+    <!-- Header -->
     <header class="text-center">
-        <h1>Bienvenue dans le monde des tests logiciels</h1>
-        <p>Découvrez les bases des types de tests de manière simple et interactive.</p>
+        <h1>Software Testing</h1>
+        <p>Discover test types with examples.</p>
     </header>
 
     <!-- Navigation -->
     <nav class="container">
-        <a href="index.html" class="btn btn-custom">Accueil</a>
-        <a href="content/tests-statiques.html" class="btn btn-custom">Tests Statiques</a>
-        <a href="content/tests-dynamiques.html" class="btn btn-custom">Tests Dynamiques</a>
-        <a href="content/tests-fonctionnels.html" class="btn btn-custom">Tests Fonctionnels</a>
-        <a href="content/tests-non-fonctionnels.html" class="btn btn-custom">Tests Non Fonctionnels</a>
-        <a href="content/tests-boite-noire.html" class="btn btn-custom">Tests Boîte Noire</a>
-        <a href="content/tests-boite-blanche.html" class="btn btn-custom">Tests Boîte Blanche</a>
+        <a href="index.html" class="btn btn-custom">Home</a>
+        <a href="content/tests-statiques.html" class="btn btn-custom">Static Testing</a>
+        <a href="content/tests-dynamiques.html" class="btn btn-custom">Dynamic testing</a>
+        <a href="content/tests-fonctionnels.html" class="btn btn-custom">Functional testing</a>
+        <a href="content/tests-non-fonctionnels.html" class="btn btn-custom">Non functional testing</a>
+        <a href="content/tests-boite-noire.html" class="btn btn-custom">Black box testing</a>
+        <a href="content/tests-boite-blanche.html" class="btn btn-custom">White box testing</a>
         <a href="content/devops.html" class="btn btn-custom">DevOps</a>
         <a href="content/ci-cd.html" class="btn btn-custom">CI/CD</a>
-        <a href="content/tests-specifiques.html" class="btn btn-custom">Tests Spécifiques</a>
+        <a href="content/tests-specifiques.html" class="btn btn-custom">Others</a>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
         <!-- Introduction Section -->
         <section id="introduction" data-aos="fade-up">
-            <h2>Pourquoi les tests sont-ils importants ?</h2>
-            <p>Les tests logiciels permettent de s'assurer que les applications fonctionnent correctement et répondent aux attentes des utilisateurs.</p>
+            <h2>Why is testing necessary ?</h2>
+            <p>Testing contributes to achieving higher-quality test objects.</p>
             <div id="bug-animation" class="my-4 text-center">
-                <p class="mb-3">Animation : Imaginez un bouton qui ne fonctionne pas, puis voyez comment les tests corrigent cela !</p>
-                <button id="test-button" class="btn btn-danger">Je ne fonctionne pas encore</button>
+                <p class="mb-3">Example: Imagine that this button doesn't work, click on it and see that tests contribute to fix this bug !</p>
+                <button id="test-button" class="btn btn-danger">i'm a non-functional button</button>
             </div>
         </section>
 
         <!-- Exercise Section -->
         <section id="exercise" data-aos="fade-up">
-            <h2>Exercice : Trouvez l’erreur dans le texte !</h2>
-            <p>Repérez l'erreur dans le texte ci-dessous et sélectionnez votre réponse :</p>
+            <h2>Practice: can you find the bug in this example!</h2>
+            <p>what is the error on this text :</p>
             <div class="exercise">
-                <p id="text-to-check" class="text-danger">"Exampel de texte avec une erreur."</p>
+                <p id="text-to-check" class="text-danger">"GUB in this phrase is an error."</p>
 
                 <!-- Choix des erreurs -->
                 <div class="my-3">
                     <label>
-                        <input type="radio" name="error" value="Exampel"> "Exampel" est incorrect.
+                        <input type="radio" name="error" value="Exampel"> "GUB" is incorrect.
                     </label><br>
                     <label>
-                        <input type="radio" name="error" value="de"> "de" est incorrect.
+                        <input type="radio" name="error" value="de"> "is" est incorrect.
                     </label><br>
                     <label>
-                        <input type="radio" name="error" value="aucune"> Il n’y a pas d’erreur.
+                        <input type="radio" name="error" value="aucune"> there is no bug.
                     </label>
                 </div>
 
-                <button id="validate-button" class="btn btn-custom mt-3">Valider</button>
+                <button id="validate-button" class="btn btn-custom mt-3">Validate</button>
             </div>
         </section>
     </main>
@@ -222,7 +231,7 @@
                 duration: 1,
                 backgroundColor: 'green',
                 color: 'white',
-                innerHTML: "Je fonctionne maintenant !",
+                innerHTML: "i'm working now !",
             });
         });
 
@@ -232,17 +241,17 @@
             const selectedOption = document.querySelector('input[name="error"]:checked');
             if (selectedOption && selectedOption.value === 'Exampel') {
                 Swal.fire({
-                    title: 'Bravo !',
-                    text: 'Vous avez identifié le problème !',
+                    title: 'GOOD !',
+                    text: 'You have finded the BUG !',
                     icon: 'success',
-                    confirmButtonText: 'Continuer',
+                    confirmButtonText: 'continue',
                 });
             } else {
                 Swal.fire({
                     title: 'Oups !',
-                    text: 'Ce n’est pas la bonne réponse.',
+                    text: 'this is not a bug.',
                     icon: 'error',
-                    confirmButtonText: 'Réessayer',
+                    confirmButtonText: 'Try again',
                 });
             }
         });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests Statiques</title>
+    <title>Static testing</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,43 +19,36 @@
 <body>
 
 <!-- Header -->
-<header class="bg-primary text-white text-center p-4">
-    <h1 class="text-3xl font-bold">Tests Statiques</h1>
-    <p class="mt-2">Apprenez ce qu'est un test statique et pourquoi il est utile.</p>
+<header class="bg-danger text-black text-center p-4">
+    <h1 class="text-3xl font-bold">Static testing</h1>
+    <p class="mt-2">What is the benefits of a static testing.</p>
 </header>
 
 <!-- Navigation pour les pages dans le dossier content -->
-<nav class="bg-light p-3">
-    <a href="../index.html" class="btn btn-primary">Accueil</a>
-    <a href="tests-statiques.html" class="btn btn-secondary">Tests Statiques</a>
-    <a href="tests-dynamiques.html" class="btn btn-secondary">Tests Dynamiques</a>
-    <a href="tests-fonctionnels.html" class="btn btn-secondary">Tests Fonctionnels</a>
-    <a href="tests-non-fonctionnels.html" class="btn btn-secondary">Tests Non Fonctionnels</a>
-    <a href="tests-boite-noire.html" class="btn btn-secondary">Tests Boîte Noire</a>
-    <a href="tests-boite-blanche.html" class="btn btn-secondary">Tests Boîte Blanche</a>
-    <a href="devops.html" class="btn btn-secondary">DevOps</a>
-    <a href="ci-cd.html" class="btn btn-secondary">CI/CD</a>
-    <a href="tests-specifiques.html" class="btn btn-secondary">Tests Spécifiques</a>
+<nav class="bg-danger p-1">
+    <a href="../index.html" class="btn btn-primary">Home</a>
+
 </nav>
 
 
 <!-- Main Content -->
 <main class="container my-5">
     <section id="description" data-aos="fade-up">
-        <h2 class="text-xl font-bold mb-3">Qu'est-ce qu'un test statique ?</h2>
+        <h2 class="text-xl font-bold mb-3">what is a static testing ?</h2>
         <p>
-            Les tests statiques consistent à examiner le code ou la documentation
-            sans exécuter le programme. Ils permettent de détecter des erreurs avant même que le logiciel ne soit testé dynamiquement.
+            Static testing is a type of testing that's performed on a piece of software without executing the actual code. During testing, we review and validate the product and its supporting documents.
         </p>
         <ul>
-            <li>Exemple : Vérification de syntaxe dans un code.</li>
-            <li>Exemple : Relecture de documents techniques.</li>
+            <li>Almost any work product can be examined using static testing. 
+                
+                </li>
+            <li>Examples include requirement specification documents, source code, test plans, test cases, product backlog items, test charters, project documentation, contracts and models.</li>
         </ul>
     </section>
 
     <section id="interactive" data-aos="fade-up" class="mt-5">
-        <h2 class="text-xl font-bold mb-3">Exercice interactif</h2>
-        <p>Examinez ce code et identifiez l’erreur en choisissant une réponse :</p>
+        <h2 class="text-xl font-bold mb-3">Practice</h2>
+        <p>Can you find what is the error in this code?</p>
         <pre>
         <code class="language-javascript">
           function testStatic(input {
@@ -69,23 +62,23 @@
         <!-- Options de réponse -->
         <div class="my-3">
             <label>
-                <input type="radio" name="error" value="parenthesis"> Il manque une parenthèse après "input".
+                <input type="radio" name="error" value="parenthesis"> missing parentheses after "input".
             </label><br>
             <label>
-                <input type="radio" name="error" value="brace"> Il manque une accolade après "if".
+                <input type="radio" name="error" value="brace"> missing brackets after "if".
             </label><br>
             <label>
-                <input type="radio" name="error" value="none"> Il n’y a pas d’erreur.
+                <input type="radio" name="error" value="none"> there is no errors.
             </label>
         </div>
 
-        <button id="validate-static" class="btn btn-primary mt-3">Valider ma réponse</button>
+        <button id="validate-static" class="btn btn-primary mt-3">Validate</button>
     </section>
 </main>
 
 <!-- Footer -->
 <footer class="text-center bg-light py-3">
-    <p>&copy; GoMyCode, 2025. Tous droits réservés.</p>
+    <p>&copy; GoMyCode, 2025. </p>
 </footer>
 
 <!-- Scripts -->
@@ -102,8 +95,8 @@
         const selectedOption = document.querySelector('input[name="error"]:checked');
         if (!selectedOption) {
             Swal.fire({
-                title: 'Erreur',
-                text: 'Veuillez sélectionner une réponse avant de valider.',
+                title: 'Error',
+                text: 'please select your answer.',
                 icon: 'warning',
                 confirmButtonText: 'OK',
             });
@@ -112,17 +105,17 @@
         const userAnswer = selectedOption.value;
         if (userAnswer === 'parenthesis') {
             Swal.fire({
-                title: 'Bravo !',
-                text: 'Vous avez trouvé la bonne réponse : Il manque une parenthèse après "input".',
+                title: 'excellent !',
+                text: 'you finded the right answer.',
                 icon: 'success',
-                confirmButtonText: 'Continuer',
+                confirmButtonText: 'Continue',
             });
         } else {
             Swal.fire({
                 title: 'Oups !',
-                text: 'Ce n’est pas la bonne réponse. Essayez encore.',
+                text: 'This is not the good answer',
                 icon: 'error',
-                confirmButtonText: 'Réessayer',
+                confirmButtonText: 'Try again',
             });
         }
     });
